@@ -183,6 +183,21 @@ Input: `[4, nil, 9, 5, nil]`
 
 Output: `18`
 
+unsure how to apply guard (will come back to this)
+```
+var intExample = [4, nil, 9, 5, nil]
+var start = 0
+
+for num in intExample {
+   if num != nil {
+        start += num!
+    }
+}
+print(start)
+```
+
+
+
 4. **Given an array of type [Int?]? return the sum of all non-nil values.  Use guard statements in your solution.**
 
 Input: `nil`
@@ -195,6 +210,21 @@ Input: `[1, 1, nil, 3, 5, nil, 1, nil, 3, 5, nil, 5, nil, 3], 1`
 
 Output: `24`
 
+```
+var arrayQ5 = [1, 1, nil, 3, 5, nil, 1, nil, 3, 5, nil, 5, nil, 3]
+var givenNumber = 1
+var totalSum = 0
+
+for num in arrayQ5 {
+    if num != nil && num != 1 {
+        totalSum += num!
+    }
+}
+
+print(totalSum)
+
+```
+
 
 ## Dictionaries
 
@@ -203,6 +233,15 @@ Output: `24`
 Input: `["apple", "apple", "banana", "banana", "banana", "cake", "cake"]`
 
 Output: `["apple", "banana", "cake"]`
+
+```
+var arrayWords = ["apple", "apple", "banana", "banana", "banana", "cake", "cake"]
+
+arrayWords = Array(Set(arrayWords))
+
+print(arrayWords.sorted())
+
+```
 
 2. **Given a String, find the most frequently occurring letter**
 
