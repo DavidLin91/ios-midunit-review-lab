@@ -9,6 +9,12 @@ Input: `Hello, there`
 
 Output: `HELLO, THERE`
 
+```
+let input = "Hello, there"
+
+print(input.uppercased())
+```
+
 2. **Given a String, return a String alternating between uppercase and lowercase letters**
 
 
@@ -32,6 +38,17 @@ Output: `Hllo, thr`
 Input: `[1,5,2,4,1,4]`
 
 Output: `5`
+```
+var values = [1,5,2,4,1,4]
+var largestElement = 0
+for num in values {
+    if num > largestElement {
+        largestElement = num
+    }
+}
+print(largestElement)
+```
+
 
 2. **Given an array of type [Int], return the smallest element**
 
@@ -39,17 +56,42 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `1`
 
+```
+var values = [1,5,2,4,1,4]
+let smallestValue = values.min()
+```
+
 3. **Given an array of type [Int], return its sum**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `17`
 
+```
+var values = [1,5,2,4,1,4]
+var total = 0
+
+for num in values {
+    total += num
+}
+print(total)
+```
+
 4. **Given an array of type [Double], return its average**
 
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `3.6`
+```
+let doubleAvg = [3,4.5,7.5,2,1]
+var avg: Double = 0.0
+
+for num in doubleAvg {
+    avg += num / Double(doubleAvg.count)
+}
+
+print(avg)
+```
 
 5. **Given an array of type [Double] and a Double, return the sum of all numbers in the array greater than a given number**
 
@@ -57,6 +99,20 @@ Input: `[3,4.5,7.5,2,1], 3`
 
 Output: `12`
 
+```
+let array = [3,4.5,7.5,2,1]
+var number:Double = 3
+var total:Double = 0
+
+
+for num in array {
+    if num > number {
+        total += num
+    }
+}
+
+print(total)
+```
 
 6. **Given an array of type [Double], return the product of all the elements**
 
@@ -64,11 +120,29 @@ Input: `[3,4.5,7.5,2,1]`
 
 Output: `202.5`
 
+```
+let array = [3,4.5,7.5,2,1]
+var total:Double = 1
+
+
+for num in array {
+        total *= num
+}
+
+print(total)
+
+```
+
 7. **Given an array of type [Int], return the second smallest value in the array**
 
 Input: `[3,6,1,9,4,8]`
 
 Output: `3`
+
+```
+let array = [3,6,1,9,4,8].sorted()
+print(array[1])
+```
 
 ## Optionals
 
@@ -78,11 +152,30 @@ Input: `[nil, "We", "come", nil, "in", "peace"]`
 
 Output: `["We", "come", "in", "peace"]`
 
+```
+let optionals = [nil, "We", "come", nil, "in", "peace"]
+var answer = [String]()
+
+for words in optionals {
+    if words != nil {
+        answer.append(words ?? "")
+    }
+}
+print(answer)
+```
+
 2. **Given an array of type [String?]? return an array of [String] removing all nil values**
 
 Input: `nil`
 
 Output: `[]`
+
+```
+let array = [String?]()
+let nonNillArray = array.filter({$0 != nil})
+print(nonNillArray)
+```
+how do you get rid of optionals?
 
 3. **Given an array of type [Int?] return the sum of all non-nil values.  Use guard statements in your solution.**
 
