@@ -249,6 +249,22 @@ Input: `Never trust a computer you can't throw out a window ~ Steve Wozniak`
 
 Output: `t`
 
+```
+let stringWord = "Never trust a computer you can't throw out a window ~ Steve Wozniak"
+var counters = [Character : Int]()
+    
+for c in stringWord {
+        if let count = counters[c] {
+            counters[c] = count + 1
+        } else {
+            counters[c] = 1
+        }
+}
+
+let maxElement = counters.reduce(counters.first!) { $1.1 > $0.1 ? $1 : $0}
+print(maxElement.0)
+```
+
 3. **Given an array of type [Int], return a copy of the array that contains only elements that appear at least twice**
 
 Input: `[1,1,2,3,3,3,4,5,6,6,7]`
